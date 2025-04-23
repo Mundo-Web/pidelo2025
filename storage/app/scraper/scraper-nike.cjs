@@ -22,13 +22,13 @@ const limit = parseInt(args[2]) || 12;
                 "--disable-setuid-sandbox",
                 "--disable-dev-shm-usage",
                 "--disable-gpu",
-
+                "--disable-crashpad",
                 "--disable-software-rasterizer",
                 "--disable-extensions",
                 "--disable-background-networking",
                 "--remote-debugging-port=9222",
-                "--user-data-dir=/var/www/.chrome", // 🔥 Esto soluciona el problema
-                "--crashpad-disable",
+                "--user-data-dir=/var/www/.chrome", // Verifica que este directorio exista y sea accesible
+                "--crash-dump-dir=/var/www/.chrome/crash-dumps", // Añadir directorio de volcado de fallos
             ],
         });
 
